@@ -20,8 +20,4 @@ inValidLandingData = refreshedLandingData.filter(psf.col("Quantity_Sold").isNull
               
 ###### To write invalid records in separate file.
 
-inValidLandingData.write\
-    .mode("overwrite")\
-    .option("delimiter", "|")\
-    .option("header", True)\
-    .csv(outputLocation + "Hold/HoldData"+currDayZoneSuffix)
+inValidLandingData.write.mode("overwrite").option("delimiter", "|").option("header", True).csv(outputLocation + "Hold/HoldData"+currDayZoneSuffix)
